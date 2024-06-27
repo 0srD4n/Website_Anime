@@ -1,0 +1,79 @@
+:root {
+  --background-color: #1a1a2e;
+  --primary-color: #ff0249d5;
+  --secondary-color: #0f3460;
+  --accent-color: #f9d342;
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #a9a9a9;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+body {
+  background-color: var(--background-color);
+}
+.menu {
+  color: var(--primary-text-color);
+}
+nav {
+  display: block;
+  font-weight: bolder;
+  position: relative;
+  padding: 10px 10px 25px 10px;
+  background-color: var(--primary-color);
+}
+
+.kontainer-image {
+  display: block;
+  color: white;
+}
+.text-bergerak {
+  display: block;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+}
+.text-bergerak h3 {
+  color: black;
+  display: inline-block;
+  width: 100%;
+  background-color: white;
+}
+nav .block-menu a {
+  display: inline;
+  color: white;
+  position: relative;
+  text-decoration: none;
+}
+.kontiner {
+  display: flex;
+  align-items: stretch;
+  padding: 10px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+.block-menu a {
+  padding-right: 20px;
+}
+.menubawa {
+  display: flex;
+  padding-top: 20px;
+  padding-left: 10px;
+  justify-content: space-between;
+}
+.menubawa button {
+  color: rgb(0, 0, 0);
+  width: 100px;
+  border-color: aqua;
+  height: 30px;
+  text-transform: capitalize;
+  text-align: center;
+  display: inline;
+}
+.menu:hover {
+  color: var(--accent-color);
+}
