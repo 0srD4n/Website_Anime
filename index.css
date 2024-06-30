@@ -1,6 +1,6 @@
 :root {
-  --background-color: #1a1a2e;
-  --primary-color: #ff0249d5;
+  --background-color: #262626;
+  --primary-color: #160224;
   --secondary-color: #0f3460;
   --accent-color: #f9d342;
   --primary-text-color: #ffffff;
@@ -8,72 +8,159 @@
   --success-color: #28a745;
   --error-color: #dc3545;
 }
+.search {
+  display: flex;
+  align-items: center;
+}
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   text-decoration: none;
 }
+
 body {
-  background-color: var(--background-color);
+  background-image: url(/resource/Isekai.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
 .menu {
   color: var(--primary-text-color);
 }
+
 nav {
-  display: block;
-  font-weight: bolder;
+  font-weight: bold;
   position: relative;
+  width: 100%;
   padding: 10px 10px 25px 10px;
-  background-color: var(--primary-color);
+  background-color: #262626;
 }
 
 .kontainer-image {
   display: block;
   color: white;
 }
-.text-bergerak {
-  display: block;
-  width: 100%;
-  background-color: white;
-  text-align: center;
-}
-.text-bergerak h3 {
-  color: black;
-  display: inline-block;
-  width: 100%;
-  background-color: white;
-}
+
 nav .block-menu a {
-  display: inline;
+  display: inline-block;
   color: white;
   position: relative;
   text-decoration: none;
 }
+
 .kontiner {
   display: flex;
   align-items: stretch;
   padding: 10px;
-  margin-bottom: 20px;
   justify-content: space-between;
 }
+
 .block-menu a {
   padding-right: 20px;
 }
+
 .menubawa {
   display: flex;
   padding-top: 20px;
   padding-left: 10px;
   justify-content: space-between;
 }
+
 .menubawa button {
-  color: rgb(0, 0, 0);
+  color: black;
   width: 100px;
-  border-color: aqua;
+  border-color: var(--primary-color);
   height: 30px;
   text-transform: capitalize;
   text-align: center;
-  display: inline;
+  display: inline-block;
 }
+
 .menu:hover {
   color: var(--accent-color);
+}
+
+@media screen and (max-width: 600px) {
+  .block-menu {
+    display: none;
+  }
+  .kontainer-image {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #262626;
+    overflow-x: hidden;
+    border-style: hidden;
+    border-left: none;
+    transition: 0.5s;
+    padding-top: 126px;
+  }
+
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidebar a:hover {
+    color: #ffc400;
+  }
+
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 40px;
+    margin-left: 5px;
+  }
+
+  .openbtn {
+    font-size: 25px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    background-color: #262626;
+    color: white;
+    border: none;
+  }
+  .menubawa input {
+    width: max-content;
+  }
+  .openbtn:hover {
+    background-color: #262626;
+  }
+  .kontainer-image {
+    justify-content: baseline;
+    position: relative;
+  }
+}
+@media screen and (min-width: 650px) {
+  .openbtn {
+    display: none;
+  }
+  #mySidebar {
+    display: none;
+  }
+  .menubawa input {
+    display: block;
+    position: relative;
+    width: max-content;
+  }
+  .search {
+    display: flex;
+    position: relative;
+    right: 20pc;
+  }
 }

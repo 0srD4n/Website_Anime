@@ -1,35 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>renime</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <!-- navbar -->
-    <nav>
-      <!-- kontiner  block -->
-      <div class="kontiner">
-        <!-- menu navbar -->
-        <div class="block-menu">
-          <a href="#" class="menu">Home</a>
-          <a href="#" class="menu">Explore</a>
-          <a href="#" class="menu">About</a>
-        </div>
-        <!-- logo image pojok kanan atas -->
-        <div class="kontainer-image">
-          <a href="" class="menu">XplDan</a>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>renime</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav>
+    <!-- kontiner  block -->
+    <div class="kontiner">
+      <!-- handphone mode -->
+
+      <!-- menu navbar -->
+      <div class="block-menu">
+        <a href="#" class="menu">Home</a>
+        <a href="#" class="menu">Explore</a>
+        <a href="#" class="menu">About</a>
+        <a href="#" class="menu">Service</a>
+
       </div>
-      <div class="text-bergerak">
-        <h3>hallo</h3>
+
+      <!-- logo image pojok kanan atas -->
+      <div class="kontainer-image">
+        <!-- untuk handphone resulusi -->
+        <button class="openbtn" onclick="openNav()">☰</button>
+        <a href="" class="menu">XplDan</a>
       </div>
-      <!-- menu paling bawah -->
-      <div class="menubawa">
-        <button href="">login</button>
-        <button href="">signUp</button>
+    </div>
+
+    <!-- menu paling bawah -->
+    <div class="menubawa">
+      <button href="">login</button>
+      <!-- sarch bar engine -->
+      <div class="search">
+        <form action="">
+          <input type="text" placeholder="search bar"></form>
+        <button type="submit"><i class="fa fa-search"></i></button>
       </div>
-    </nav>
-  </body>
+      <button href="">signUp</button>
+    </div>
+  </nav>
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Explore</a>
+    <a href="#">Kontak</a>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
 </html>
