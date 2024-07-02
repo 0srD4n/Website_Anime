@@ -8,20 +8,20 @@
   --success-color: #28a745;
   --error-color: #dc3545;
 }
+body{
+  background-color: #484747;
+}
+
 .search {
   display: flex;
   align-items: center;
 }
+
 * {
   margin: 0;
   padding: 0;
   text-decoration: none;
-}
-
-body {
-  background-image: url(/resource/Isekai.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  box-sizing: border-box;
 }
 
 .menu {
@@ -32,6 +32,7 @@ nav {
   font-weight: bold;
   position: relative;
   width: 100%;
+  z-index: 1;
   padding: 10px 10px 25px 10px;
   background-color: #262626;
 }
@@ -67,6 +68,7 @@ nav .block-menu a {
 }
 
 .menubawa button {
+  margin-left: 20px;
   color: black;
   width: 100px;
   border-color: var(--primary-color);
@@ -81,27 +83,38 @@ nav .block-menu a {
 }
 
 @media screen and (max-width: 600px) {
+  /* hideen menu sidebar */
+  .hideens div {
+    visibility: hidden;
+  }
+  .kontainer-image a {
+    font-size: 20px;
+  }
   .block-menu {
     display: none;
   }
+
   .kontainer-image {
     display: flex;
+    margin: 0px;
+    padding: 0px;
     justify-content: space-between;
     width: 100%;
     align-items: center;
   }
+
   .sidebar {
     height: 100%;
     width: 0;
-    position: fixed;
-    z-index: 1;
+    position: absolute;
     top: 0;
     left: 0;
     background-color: #262626;
     overflow-x: hidden;
     border-style: hidden;
     border-left: none;
-    transition: 0.5s;
+    z-index: 1;
+    transition: width 1s ease, padding-top 1s ease;
     padding-top: 126px;
   }
 
@@ -127,40 +140,93 @@ nav .block-menu a {
   }
 
   .openbtn {
-    font-size: 25px;
+    font-size: 40px;
     cursor: pointer;
     padding: 0;
+    left: 0px;
+    right: 0px;
     margin: 0;
     background-color: #262626;
     color: white;
     border: none;
   }
+
   .menubawa input {
     width: max-content;
   }
+
   .openbtn:hover {
     background-color: #262626;
   }
+
   .kontainer-image {
     justify-content: baseline;
     position: relative;
   }
+  #menuicon div {
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0px 0px 0px;
+  }
 }
-@media screen and (min-width: 650px) {
+
+@media screen and (min-width: 600px) {
+
   .openbtn {
     display: none;
   }
+
   #mySidebar {
     display: none;
   }
+
   .menubawa input {
     display: block;
     position: relative;
     width: max-content;
   }
+
   .search {
     display: flex;
     position: relative;
-    right: 20pc;
   }
+  .kontiner-preview {
+    width: 100%;
+    height: 500px;
+    align-items: center;
+    display: block;
+    box-sizing: border-box;
+  }
+  .kontiner-preview .image {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 100px 0px 100px 80px;
+    justify-items: center;
+    background-size: cover;
+  }
+
+  .box{
+    display: flex;
+    width: 50%;
+    background-color: rgba(2, 2, 2, 0.583); /* Menggunakan rgba untuk opacity background */
+    height: 100%;
+    justify-content: center;
+    padding-left: 20px;
+    color: white;
+  }
+  .isitulisan{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color:white;
+    word-wrap: normal;
+  }
+.isitulisan h1{
+  text-align: center;
+}
+.isitulisan h3{
+  text-align: justify;
+}
 }
