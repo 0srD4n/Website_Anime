@@ -11,66 +11,35 @@
 </head>
 
 <body>
-  <!-- navbar -->
-  <nav>
-    <!-- kontiner  block -->
-    <div class="kontiner">
-      <!-- handphone mode -->
-
-      <!-- menu navbar -->
-      <div class="block-menu">
-        <a href="#" class="menu">Home</a>
-        <a href="#" class="menu">Explore</a>
-        <a href="#" class="menu">About</a>
-        <a href="#" class="menu">Service</a>
-      </div>
-
-      <!-- logo image pojok kanan atas -->
-      <div class="kontainer-image">
-        <!-- untuk handphone resulusi -->
-        <button class="openbtn" onclick="openNav()">
-          <span id="menuicon">
-            <div></div>
-            <div></div>
-            <div></div>
-          </span>
-        </button>
-        <a href="" class="menu">XplDan</a>
-      </div>
-    </div>
-
-    <!-- menu paling bawah -->
-    <div class="menubawa">
-      <!-- sarch bar engine -->
-      <div class="search" id="hilang">
-        <form action="">
-          <input type="text" placeholder="search bar" />
-        </form>
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </div>
-    </div>
-  </nav>
-  <div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Explore</a>
-    <a href="#">Kontak</a>
-  </div>
+  <div id="navbar-template"></div>
   <!-- kontiner image preview -->
   <div class="kontiner-preview">
     <div class="image preview1" id="prev1">
       <div class="box box-kontainer1">
         <div class="isitulisan">
-        <h1 id="title"></h1>
-        <h3 id="deskripss"></h3>
-      </div>
+          <h1 id="title"></h1>
+          <h4 id="deskripss"></h4>
+          <button id="linkvideos">Watch Now</button>
+        </div>
       </div>
     </div>
     <div>
     </div>
   </div>
-  <script src="index.js"></script>
+  <!-- batas prefiew -->
+  <!-- main page -->
+  <main>
+    <div class="kotainer">
+      <!-- <img src="" alt="ini gambar"> -->
+      <div class="title-main">
+      </div>
+      <div class="deskription-main">
+
+      </div>
+    </div>
+  </main>
+  <script src="/script/sidebar.js"> </script>
+  <script src="/script/index.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<link rel="stylesheet" href="index.css" />
+<style>
+  :root {
+    --background-color: #262626;
+    --primary-color: #160224;
+    --secondary-color: #0f3460;
+    --accent-color: #f9d342;
+    --primary-text-color: #ffffff;
+    --secondary-text-color: #a9a9a9;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+  }
+
+  .kontainer-image {
+    display: block;
+    color: white;
+  }
+
+  .menu:hover {
+    color: var(--accent-color);
+  }
+
+  .kontiner {
+    display: flex;
+    align-items: stretch;
+    padding: 10px;
+    justify-content: space-between;
+  }
+
+  .block-menu a {
+    padding-right: 20px;
+  }
+
+  .menubawa {
+    display: flex;
+    padding-top: 20px;
+    padding-left: 10px;
+    justify-content: space-between;
+  }
+
+  .menubawa button {
+    margin-left: 20px;
+    color: black;
+    width: 100px;
+    border-color: var(--primary-color);
+    height: 30px;
+    text-transform: capitalize;
+    text-align: center;
+    display: inline-block;
+  }
+
+  nav .block-menu a {
+    display: inline-block;
+    color: white;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+
+  .menu {
+    color: var(--primary-text-color);
+  }
+
+  nav {
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    padding: 10px 10px 0px 10px;
+    background-color: #262626;
+  }
+
+  @media screen and (max-width: 600px) {
+    .kontainer-image a {
+      font-size: 20px;
+    }
+
+    .kontainer-image {
+      justify-content: baseline;
+      position: relative;
+    }
+
+    .kontainer-image {
+      display: flex;
+      margin: 0px;
+      padding: 0px;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #262626;
+      overflow-x: hidden;
+      border-style: hidden;
+      border-left: none;
+      z-index: 1;
+      transition: width 1s ease, padding-top 1s ease;
+      padding-top: 126px;
+    }
+
+    .block-menu {
+      display: none;
+    }
+
+    .hideens div {
+      visibility: hidden;
+    }
+
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #ffffff;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #ffc400;
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 40px;
+      margin-left: 5px;
+    }
+
+    .openbtn {
+      font-size: 40px;
+      cursor: pointer;
+      padding: 0;
+      left: 0px;
+      right: 0px;
+      margin: 0;
+      background-color: #262626;
+      color: white;
+      border: none;
+    }
+
+    .menubawa input {
+      width: max-content;
+      display: inline-block;
+    }
+
+    .openbtn:hover {
+      background-color: #262626;
+    }
+
+    #menuicon div {
+      width: 30px;
+      height: 5px;
+      background-color: white;
+      margin: 6px 0px 0px 0px;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .hideens div {
+      visibility: visible;
+    }
+    .menubawa button {
+      visibility: visible;
+    }
+    .openbtn {
+      display: none;
+    }
+
+    #mySidebar {
+      display: none;
+    }
+
+    .menubawa input {
+      display: block;
+      position: relative;
+      width: max-content;
+      visibility: visible;
+    }
+
+    .search {
+      display: flex;
+      position: relative;
+    }
+  }
+</style>
+<nav>
+  <!-- kontainer  block -->
+  <div class="kontiner">
+    <!-- menu navbar -->
+    <div class="block-menu">
+      <a href="" class="hmenu menu" onclick="pindahmenu()">Home</a>
+      <a id="explore" href="#" class="menu explore" onclick="pindahmenu()"
+        >Explore</a
+      >
+      <a href="#" id="about" class="menu about" onclick="pindahmenu()">About</a>
+      <a href="#" id="service" class="menu service" onclick="pindahmenu()"
+        >Service</a
+      >
+    </div>
+
+    <!-- logo image pojok kanan atas -->
+    <div class="kontainer-image">
+      <!-- untuk handphone resulusi -->
+      <button class="openbtn" onclick="openNav()">
+        <span id="menuicon">
+          <div></div>
+          <div></div>
+          <div></div>
+        </span>
+      </button>
+      <a href="" class="menu">XplDan</a>
+    </div>
+  </div>
+
+  <!-- menu paling bawah -->
+  <div class="menubawa">
+    <!-- sarch bar engine -->
+    <div class="search" id="hilang">
+      <form action="">
+        <input type="text" placeholder="search bar" />
+      </form>
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+  </div>
+  -
+</nav>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+  <a class="hmenu -s" href="#" onclick="pindahmenu()">Home</a>
+  <a class="explore" href="#" onclick="pindahmenu()">Explore</a>
+  <a href="#">About</a>
+  <a href="#">Kontak</a>
+</div>
+<script src="/script/sidebar.js"></script>
+
+

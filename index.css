@@ -1,4 +1,4 @@
-:root {
+ :root {
   --background-color: #262626;
   --primary-color: #160224;
   --secondary-color: #0f3460;
@@ -12,11 +12,6 @@ body{
   background-color: #484747;
 }
 
-.search {
-  display: flex;
-  align-items: center;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -24,175 +19,54 @@ body{
   box-sizing: border-box;
 }
 
-.menu {
-  color: var(--primary-text-color);
-}
 
-nav {
-  font-weight: bold;
-  position: relative;
-  width: 100%;
-  z-index: 1;
-  padding: 10px 10px 25px 10px;
-  background-color: #262626;
-}
-
-.kontainer-image {
-  display: block;
-  color: white;
-}
-
-nav .block-menu a {
-  display: inline-block;
-  color: white;
-  position: relative;
-  text-decoration: none;
-}
-
-.kontiner {
-  display: flex;
-  align-items: stretch;
-  padding: 10px;
-  justify-content: space-between;
-}
-
-.block-menu a {
-  padding-right: 20px;
-}
-
-.menubawa {
-  display: flex;
-  padding-top: 20px;
-  padding-left: 10px;
-  justify-content: space-between;
-}
-
-.menubawa button {
-  margin-left: 20px;
-  color: black;
-  width: 100px;
-  border-color: var(--primary-color);
-  height: 30px;
-  text-transform: capitalize;
-  text-align: center;
-  display: inline-block;
-}
-
-.menu:hover {
-  color: var(--accent-color);
-}
 
 @media screen and (max-width: 600px) {
-  /* hideen menu sidebar */
-  .hideens div {
-    visibility: hidden;
-  }
-  .kontainer-image a {
-    font-size: 20px;
-  }
-  .block-menu {
-    display: none;
-  }
-
-  .kontainer-image {
-    display: flex;
-    margin: 0px;
-    padding: 0px;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-  }
-
-  .sidebar {
-    height: 100%;
-    width: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #262626;
-    overflow-x: hidden;
-    border-style: hidden;
-    border-left: none;
-    z-index: 1;
-    transition: width 1s ease, padding-top 1s ease;
-    padding-top: 126px;
-  }
-
-  .sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #ffffff;
-    display: block;
-    transition: 0.3s;
-  }
-
-  .sidebar a:hover {
-    color: #ffc400;
-  }
-
-  .sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 40px;
-    margin-left: 5px;
-  }
-
-  .openbtn {
-    font-size: 40px;
-    cursor: pointer;
-    padding: 0;
-    left: 0px;
-    right: 0px;
-    margin: 0;
-    background-color: #262626;
-    color: white;
-    border: none;
-  }
-
-  .menubawa input {
-    width: max-content;
-  }
-
-  .openbtn:hover {
-    background-color: #262626;
-  }
-
-  .kontainer-image {
-    justify-content: baseline;
-    position: relative;
-  }
-  #menuicon div {
-    width: 30px;
-    height: 5px;
-    background-color: white;
-    margin: 6px 0px 0px 0px;
-  }
+ .kontiner-preview {
+  display: block;
+  width: 100%;
+  height:300px;
+  background-size: cover;
+  color: white;
+ }
+ .kontiner-preview .image {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-size: cover;
+}
+#linkvideos {
+  border: none;
+  align-items: center;
+  text-align: center;
+  display: inline;
+  background-color:rgb(0, 196, 69) ;
+  width: 100%;
+  padding: 10px;
+  filter:opacity(0.8);
+  filter: brightness(2px);
+  box-shadow: #021f24 0px 3px 4px 4px 4px;
+color: white;
+font-weight: bolder;
+}
+.box {
+  width: 50%;
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center ;
+  background-color: rgba(2, 2, 2, 0.583);
+}
+.isitulisan h1 , .isitulisan h4{
+font-size:medium ;
+}
 }
 
 @media screen and (min-width: 600px) {
 
-  .openbtn {
-    display: none;
-  }
-
-  #mySidebar {
-    display: none;
-  }
-
-  .menubawa input {
-    display: block;
-    position: relative;
-    width: max-content;
-  }
-
-  .search {
-    display: flex;
-    position: relative;
-  }
   .kontiner-preview {
     width: 100%;
+    box-shadow: #410454ba 0px 5px 100px 30px;
     height: 500px;
     align-items: center;
     display: block;
@@ -208,7 +82,7 @@ nav .block-menu a {
   }
 
   .box{
-    display: flex;
+    display: block;
     width: 50%;
     background-color: rgba(2, 2, 2, 0.583); /* Menggunakan rgba untuk opacity background */
     height: 100%;
@@ -222,11 +96,34 @@ nav .block-menu a {
     height: 100%;
     color:white;
     word-wrap: normal;
+    align-items: center;
+    text-align: center;
   }
-.isitulisan h1{
+  .isitulisan h4{
+    padding-bottom: 20px;
+    display: block;
+  width: 100%;  
+  }
+#linkvideos {
+  border: none;
+  padding:10px;
+  align-items: center;
   text-align: center;
+  display: inline;
+  background-color:rgb(0, 196, 69) ;
+  width: 30%;
+  filter:opacity(0.8);
+  filter: brightness(2px);
+  box-shadow: #021f24 0px 3px 4px 4px 4px;
+color: white;
+font-weight: bolder;
 }
-.isitulisan h3{
-  text-align: justify;
+main{
+  display: grid;
+  height: 600px;
+  width: 100%;
+  border-style: dotted;
+  background-color: #a9a9a9;
 }
 }
+

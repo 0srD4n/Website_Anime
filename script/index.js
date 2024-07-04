@@ -1,26 +1,5 @@
-function openNav() {
-  document.getElementById("mySidebar").style = "width: 250px; border: groove;";
-  let dantc = document.getElementById("menuicon");
-  dantc.classList.toggle("hideens");
-  // Mengubah visibilitas elemen dengan id 'hilang' menjadi tersembunyi
-  document.getElementById("hilang").style.visibility = "hidden";
-}
 
-function closeNav() {
-  document.getElementById("mySidebar").style = "width: 0; border :none";
-  let dantc = document.getElementById("menuicon");
-  dantc.classList.toggle("hideens");
-  document.getElementById("hilang").style.visibility = "visible";
-}
 // Array of images with their titles and descriptions
-fetch('/data/data_image.json')
-  .then(response => response.json())
-  .then(data => {
-    let imagesArray = data;
-  });
-// Initial index
-let currentIndex = 0;
-
 // Function to update the image and its details
 fetch('/data/data_image.json') // Sesuaikan path ke file JSON Anda
   .then(response => response.json())
@@ -38,6 +17,10 @@ fetch('/data/data_image.json') // Sesuaikan path ke file JSON Anda
       imageElement.style.backgroundImage = `url(${imagesArray[index].src})`;
       titleElement.textContent = imagesArray[index].title;
       descriptionElement.textContent = imagesArray[index].description;
+      let linkvideos = document.getElementById('linkvideos')
+      linkvideos.onclick = function () {
+        window.open(imagesArray[currentIndex].linkvideo, '_self');
+      };
     }
 
     // Function to move to the next image
