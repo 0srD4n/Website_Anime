@@ -1,95 +1,42 @@
 // Array of images with their titles and descriptions
 // Function to update the image and its details
-fetch('/data/data_image.json') // Sesuaikan path ke file JSON Anda
-  .then(response => response.json())
-  .then(data => {
-    let imagesArray = data;
+import { images, films } from "../data/data.js";
 
-    // Initial index
-    let currentIndex = 0;
+// Function to update the image and its details
+function updateImage(index) {
+	let imageElement = document.getElementById('prev1');
+	let titleElement = document.getElementById('title');
+	let descriptionElement = document.getElementById('deskripss');
+	imageElement.style.backgroundImage = `url(${images[index].src})`;
+	titleElement.textContent = images[index].title;
+	descriptionElement.textContent = images[index].description;
+	let linkvideos = document.getElementById('linkvideos')
+	linkvideos.onclick = function () {
+		window.open(images[currentIndex].linkvideo, '_self');
+	};
+}
 
-    // Function to update the image and its details
-    function updateImage(index) {
-      let imageElement = document.getElementById('prev1');
-      let titleElement = document.getElementById('title');
-      let descriptionElement = document.getElementById('deskripss');
-      imageElement.style.backgroundImage = `url(${imagesArray[index].src})`;
-      titleElement.textContent = imagesArray[index].title;
-      descriptionElement.textContent = imagesArray[index].description;
-      let linkvideos = document.getElementById('linkvideos')
-      linkvideos.onclick = function () {
-        window.open(imagesArray[currentIndex].linkvideo, '_self');
-      };
-    }
+// Function to move to the next image
+let currentIndex = 0;
+function nextImage() {
+	currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+	updateImage(currentIndex);
+}
 
-    // Function to move to the next image
-    function nextImage() {
-      currentIndex = (currentIndex === imagesArray.length - 1) ? 0 : currentIndex + 1;
-      updateImage(currentIndex);
-    }
+// Initial call to update the image
+updateImage(currentIndex);
 
-    // Initial call to update the image
-    updateImage(currentIndex);
+// Set interval to change the image every 3 seconds
+setInterval(nextImage, 3000);
 
-    // Set interval to change the image every 3 seconds
-    setInterval(nextImage, 3000);
-  })
 document.addEventListener('DOMContentLoaded', () => {
   const filmList = document.getElementById('film-list');
   let page = 1;
   const filmsPerPage = 20;
 
-  const films = [
-    // Array data film
-    {
-      title: 'Aime 1',
-      image: 'https://via.placeholder.com/200',
-      description: 'Description 1'
-    },
-    {
-      title: 'anime 1',
-      image: 'https://via.placeholder.com/200',
-      description: 'Description 1'
-    },
-    {
-      title: 'anime 1',
-      image: 'https://via.placeholder.com/200',
-      description: 'Description 1'
-    },
-    {
-      title: 'anime 1',
-      image: 'https://via.placeholder.com/200',
-      description: 'Description 1'
-    },
-    {
-      title: 'anime 1',
-      image: 'https://via.placeholder.com/200',
-      description: 'Description 1'
-    },
-    {
-      title: 'anime 1',
-      image: 'https://via.placeholder.com/200',
-      description: 'Description 1'
-    },
-    {
-      title: 'anime 1',
-      image: 'https://via.placeholder.com/200',
-      description: 'Description 1'
-    },
-    {
-      title: 'anime 1',
-      image: 'https://via.placeholder.com/200',
-      description: 'Description 1'
-    },
-    {
-      title: 'anime 1',
-      image: 'https://via.placeholder.com/200',
-      description: 'Description 1'
-    },
-    // Tambahkan lebih banyak film sesuai kebutuhan
-  ];
 
   const loadFilms = () => {
+		console.log('executed');
     const start = (page - 1) * filmsPerPage;
     const end = start + filmsPerPage;
     const filmsToLoad = films.slice(start, end);
