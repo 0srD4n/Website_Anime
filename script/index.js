@@ -1,4 +1,3 @@
-
 // Array of images with their titles and descriptions
 // Function to update the image and its details
 fetch('/data/data_image.json') // Sesuaikan path ke file JSON Anda
@@ -35,3 +34,89 @@ fetch('/data/data_image.json') // Sesuaikan path ke file JSON Anda
     // Set interval to change the image every 3 seconds
     setInterval(nextImage, 3000);
   })
+document.addEventListener('DOMContentLoaded', () => {
+  const filmList = document.getElementById('film-list');
+  let page = 1;
+  const filmsPerPage = 20;
+
+  const films = [
+    // Array data film
+    {
+      title: 'Aime 1',
+      image: 'https://via.placeholder.com/200',
+      description: 'Description 1'
+    },
+    {
+      title: 'anime 1',
+      image: 'https://via.placeholder.com/200',
+      description: 'Description 1'
+    },
+    {
+      title: 'anime 1',
+      image: 'https://via.placeholder.com/200',
+      description: 'Description 1'
+    },
+    {
+      title: 'anime 1',
+      image: 'https://via.placeholder.com/200',
+      description: 'Description 1'
+    },
+    {
+      title: 'anime 1',
+      image: 'https://via.placeholder.com/200',
+      description: 'Description 1'
+    },
+    {
+      title: 'anime 1',
+      image: 'https://via.placeholder.com/200',
+      description: 'Description 1'
+    },
+    {
+      title: 'anime 1',
+      image: 'https://via.placeholder.com/200',
+      description: 'Description 1'
+    },
+    {
+      title: 'anime 1',
+      image: 'https://via.placeholder.com/200',
+      description: 'Description 1'
+    },
+    {
+      title: 'anime 1',
+      image: 'https://via.placeholder.com/200',
+      description: 'Description 1'
+    },
+    // Tambahkan lebih banyak film sesuai kebutuhan
+  ];
+
+  const loadFilms = () => {
+    const start = (page - 1) * filmsPerPage;
+    const end = start + filmsPerPage;
+    const filmsToLoad = films.slice(start, end);
+
+    filmsToLoad.forEach(film => {
+      const filmItem = document.createElement('div');
+      filmItem.className = 'film-item';
+
+      filmItem.innerHTML = `
+                <img src="${film.image}" alt="${film.title}">
+                <h3>${film.title}</h3>
+                <p>${film.description}</p>
+            `;
+
+      filmList.appendChild(filmItem);
+    });
+
+    page++;
+  };
+
+  const handleScroll = () => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+      loadFilms();
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  loadFilms();
+});

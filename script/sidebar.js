@@ -26,7 +26,34 @@ function pindahmenu() {
         menuhome.href = "https://www.youtube.com";
     let explore = document.querySelectorAll('.explore')
     explore.forEach(menuexplore =>{
-      menuexplore.href="https://www.yandex.com"
+      menuexplore.href="#Explore"
     } )
     });  
 }
+  // Tambahkan efek scroll untuk navbar
+  window.addEventListener('scroll', function() {
+    var nav = document.getElementById('mainNav');
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+
+  // Toggle sidebar
+  function toggleNav() {
+    var sidebar = document.getElementById("mySidebar");
+    var menuIcon = document.getElementById("menuicon");
+    if (sidebar.style.width === "250px") {
+      sidebar.style.width = "0";
+      menuIcon.classList.remove("open");
+    } else {
+      sidebar.style.width = "250px";
+      menuIcon.classList.add("open");
+    }
+  }
+
+  // Animasi untuk ikon menu
+  document.querySelector('.openbtn').addEventListener('click', function() {
+    this.classList.toggle('active');
+  });
