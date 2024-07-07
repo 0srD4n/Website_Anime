@@ -1,6 +1,6 @@
 // about
 // Menggunakan URL relatif untuk GitHub Pages
-fetch("./Kontainer/sidebar.html")
+fetch("../Kontainer/sidebar.html")
   .then((response) => response.text())
   .then((ini) => {
     document.getElementById("navbar-template").innerHTML = ini;
@@ -31,10 +31,10 @@ function pindahmenu() {
   let home = document.querySelectorAll(".hmenu");
   home.forEach((menuhome) => {
     menuhome.href = "https://www.youtube.com";
-    let explore = document.querySelectorAll(".explore");
-    explore.forEach((menuexplore) => {
-      menuexplore.href = "#Explore";
-    });
+  });
+  let explore = document.querySelectorAll(".explore");
+  explore.forEach((menuexplore) => {
+    menuexplore.href = "#Explore";
   });
 }
 // Tambahkan efek scroll untuk navbar
