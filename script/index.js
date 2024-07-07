@@ -1,6 +1,6 @@
 // Array of images with their titles and descriptions
 // Function to update the image and its details
-fetch("../data/data_image_preview.json") // Sesuaikan path ke file JSON Anda
+fetch("./data/data_image_preview.json") // Sesuaikan path ke file JSON Anda
   .then((response) => response.json())
   .then((data) => {
     let imagesArray = data;
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let page = 1;
   const filmsPerPage = 20;
 
-  fetch('../data/data_explore.json') 
+  fetch('./data/data_explore.json') 
     .then((response) => response.json())
     .then((datagambar) => {
       let films = datagambar;
