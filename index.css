@@ -129,7 +129,8 @@ h1 {
 /* Responsif */
 @media screen and (max-width: 768px) {
   .kontiner-preview {
-    height: 300px;
+    height: 600px;
+    padding-top: 10pc;
   }
 
   .box {
@@ -153,4 +154,7 @@ h1 {
   .box {
     max-width: 100%;
   }
+}
+.box {
+  text-align: center;
 }
