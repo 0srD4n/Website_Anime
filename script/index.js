@@ -1,6 +1,6 @@
 // Array of images with their titles and descriptions
 // Function to update the image and its details
-fetch("../data/data_image_preview.json") // Sesuaikan path ke file JSON Anda
+fetch("data/data_image_preview.json") // Sesuaikan path ke file JSON Anda
   .then((response) => response.json())
   .then((data) => {
     let imagesArray = data;
@@ -40,29 +40,29 @@ document.addEventListener("DOMContentLoaded", () => {
   let page = 1;
   const filmsPerPage = 20;
 
-  fetch('../data/data_explore.json') 
+  fetch("../data/data_explore.json")
     .then((response) => response.json())
     .then((datagambar) => {
       let films = datagambar;
-      
+
       const loadFilms = () => {
         const start = (page - 1) * filmsPerPage;
         const end = start + filmsPerPage;
         const filmsToLoad = films.slice(start, end);
-    
+
         filmsToLoad.forEach((film) => {
           const filmItem = document.createElement("div");
           filmItem.className = "film-item";
-    
+
           filmItem.innerHTML = `
             <img src="${film.image}" alt="${film.title}">
             <h3>${film.title}</h3>
             <p>${film.description}</p>
           `;
-    
+
           filmList.appendChild(filmItem);
         });
-    
+
         page++;
       };
 
@@ -74,9 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
           loadFilms();
         }
       };
-    
+
       window.addEventListener("scroll", handleScroll);
-    
+
       loadFilms();
-    })
+    });
 });
