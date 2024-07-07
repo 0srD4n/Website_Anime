@@ -1,6 +1,4 @@
-// Array of images with their titles and descriptions
-// Function to update the image and its details
-fetch("data/data_image_preview.json") // Sesuaikan path ke file JSON Anda
+fetch("./data/data_image_preview.json")
   .then((response) => response.json())
   .then((data) => {
     let imagesArray = data;
