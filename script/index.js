@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let page = 1;
   const filmsPerPage = 20;
 
-  fetch("../data/data_explore.json")
+  fetch("./data/data_explore.json")
     .then((response) => response.json())
     .then((datagambar) => {
       let films = datagambar;
