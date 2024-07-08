@@ -1,4 +1,4 @@
-fetch("./data/data_image_preview.json")
+fetch("data/data_image_preview.json")
   .then((response) => response.json())
   .then((data) => {
     let imagesArray = data;
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let page = 1;
   const filmsPerPage = 20;
 
-  fetch("./data/data_explore.json")
+  fetch("data/data_explore.json")
     .then((response) => response.json())
     .then((datagambar) => {
       let films = datagambar;
