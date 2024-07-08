@@ -1,6 +1,6 @@
 // about
 // Menggunakan URL relatif untuk GitHub Pages
-fetch("../Kontainer/sidebar.html")
+fetch("Kontainer/sidebar.html")
   .then((response) => response.text())
   .then((ini) => {
     document.getElementById("navbar-template").innerHTML = ini;
