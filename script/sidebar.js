@@ -61,6 +61,4 @@ function toggleNav() {
 }
 
 // Animasi untuk ikon menu
-document.querySelector(".openbtn").addEventListener("click", function () {
-  this.classList.toggle("active");
-});
+
